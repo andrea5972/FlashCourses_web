@@ -14,8 +14,8 @@ class Deck(models.Model):
     parent_user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     parent_course = models.ForeignKey(Course, on_delete=models.CASCADE, default=1)
 
-    #def __str__(self):
-    #    return self.title
+    def __str__(self):
+        return self.title
 
     def get_number_cards(self):
         """
@@ -40,8 +40,6 @@ class Deck(models.Model):
         '''
 
         return self.parent_user.username == user.username
-
-
 
 
 class Card(models.Model):
